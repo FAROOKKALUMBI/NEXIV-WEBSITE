@@ -46,7 +46,7 @@ export function CTA({ onOpenContact }: CtaProps) {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 w-full sm:w-auto">
               <button
                 onClick={onOpenContact}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md border border-white/30 bg-[#293541] hover:border-white/80 hover:bg-white/5 text-white font-inter font-medium text-[13.5px] transition-all duration-200 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#afe714]"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md border border-white/30 bg-[#293541] hover:border-white/80 hover:bg-white/10 active:scale-[0.98] text-white font-inter font-medium text-[13.5px] transition-all duration-200 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#afe714]"
               >
                 <MessageSquare className="w-4 h-4 text-white" />
                 <span>Start a Project</span>
@@ -54,7 +54,7 @@ export function CTA({ onOpenContact }: CtaProps) {
 
               <a
                 href="tel:+265884288849"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md bg-[#afe714] hover:bg-[#9ccf10] hover:scale-[1.02] text-[#293541] font-inter font-bold text-[13.5px] transition-all duration-200 shadow-sm focus-visible:ring-2 focus-visible:ring-[#afe714]"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md bg-[#afe714] text-[#293541] hover:bg-white hover:text-[#293541] active:bg-white/90 active:scale-[0.98] border border-transparent hover:border-black/10 font-inter font-bold text-[13.5px] transition-all duration-200 shadow-sm cursor-pointer group focus-visible:ring-2 focus-visible:ring-[#afe714]"
               >
                 <Phone className="w-4 h-4 text-[#293541]" />
                 <span>Call Us Now</span>

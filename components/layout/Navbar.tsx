@@ -47,10 +47,10 @@ export function Navbar({ onOpenContact }: NavbarProps) {
         <div className="hidden md:flex items-center">
           <button
             onClick={onOpenContact}
-            className="font-inter font-semibold text-[13.5px] bg-[#afe714] text-black px-4 py-2 rounded-[5px] flex items-center gap-2 hover:bg-[#9ccf10] hover:scale-[1.02] transition-all duration-200 shadow-sm cursor-pointer group focus-visible:ring-2 focus-visible:ring-[#afe714]"
+            className="font-inter font-semibold text-[13.5px] bg-[#afe714] text-[#293541] px-4 py-2 rounded-md flex items-center gap-2 hover:bg-white hover:text-[#293541] active:bg-white/90 active:scale-[0.98] border border-transparent hover:border-black/10 transition-all duration-200 shadow-sm cursor-pointer group focus-visible:ring-2 focus-visible:ring-[#afe714]"
           >
             <span>Start a Project</span>
-            <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-1" />
+            <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-1 text-[#293541]" />
           </button>
         </div>
 
@@ -95,7 +95,7 @@ export function Navbar({ onOpenContact }: NavbarProps) {
                     setIsOpen(false);
                     if (onOpenContact) onOpenContact();
                   }}
-                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-[5px] bg-[#afe714] text-black font-inter font-semibold text-[13.5px] shadow-sm hover:bg-[#9ccf10] transition-colors"
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md bg-[#afe714] text-[#293541] font-inter font-semibold text-[13.5px] shadow-sm hover:bg-white hover:text-[#293541] active:bg-white/90 active:scale-[0.98] border border-transparent hover:border-black/10 transition-all"
                 >
                   <span>Start a Project</span>
                   <ArrowRight size={15} />

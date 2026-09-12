@@ -40,11 +40,10 @@ export function Hero({ onOpenContact }: HeroProps) {
             The Nexus Of Creativity<br />And Innovation.
           </h1>
 
-          {/* Paragraph: 3 lines */}
-          <p className="font-inter font-normal text-[15px] sm:text-[16px] leading-[1.55] text-white/85 max-w-[440px] mb-8">
-            Every Great Brand starts as an idea.<br className="hidden sm:inline" />
-            We turn yours into powerful visuals,<br className="hidden sm:inline" />
-            Brands &amp; Digital Experiences.
+          {/* Paragraph: Exact 2 lines only as requested */}
+          <p className="font-inter font-normal text-[15px] sm:text-[16px] leading-[1.55] text-white/85 max-w-[480px] mb-8">
+            Every Great Brand starts as an idea. We turn yours into<br className="hidden sm:inline" />
+            powerful visuals, Brands &amp; Digital Experiences.
           </p>
 
           {/* Buttons */}
@@ -54,32 +53,39 @@ export function Hero({ onOpenContact }: HeroProps) {
                 const el = document.getElementById("work") || document.getElementById("services");
                 el?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="font-inter font-medium text-[13.5px] text-white border border-white/50 px-5 py-2.5 rounded-md hover:bg-white/5 hover:border-white/80 transition-all duration-200 cursor-pointer text-center focus-visible:ring-2 focus-visible:ring-[#afe714]"
+              className="font-inter font-medium text-[13.5px] text-white border border-white/50 px-5 py-2.5 rounded-md hover:bg-white/10 hover:border-white/90 active:scale-[0.98] transition-all duration-200 cursor-pointer text-center focus-visible:ring-2 focus-visible:ring-[#afe714]"
             >
               View Our Work
             </button>
             <button
               onClick={onOpenContact}
-              className="font-inter font-semibold text-[13.5px] text-black bg-[#afe714] px-5 py-2.5 rounded-md flex items-center justify-center gap-2 hover:bg-[#9ccf10] hover:scale-[1.02] transition-all duration-200 shadow-sm cursor-pointer group focus-visible:ring-2 focus-visible:ring-[#afe714]"
+              className="font-inter font-semibold text-[13.5px] text-[#293541] bg-[#afe714] px-5 py-2.5 rounded-md flex items-center justify-center gap-2 hover:bg-white hover:text-[#293541] active:bg-white/90 active:scale-[0.98] transition-all duration-200 shadow-sm cursor-pointer group focus-visible:ring-2 focus-visible:ring-[#afe714]"
             >
               <span>Start a Project</span>
-              <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-1" />
+              <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-1 text-[#293541]" />
             </button>
           </div>
         </motion.div>
 
-        {/* RIGHT COLUMN — illustration */}
+        {/* RIGHT COLUMN — HD illustration with gentle floating ambient animation */}
         <motion.div
-          className="w-full max-w-[480px] lg:max-w-[540px] mx-auto lg:ml-auto flex items-center justify-center lg:justify-end"
+          className="w-full max-w-[500px] lg:max-w-[560px] mx-auto lg:ml-auto flex items-center justify-center lg:justify-end relative"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
         >
-          <img
-            src="/images/hero-illustration.png"
-            alt="NEXIV hero illustration"
-            className="w-full h-auto block object-contain drop-shadow-2xl"
-          />
+          <motion.div
+            animate={{ y: [-5, 5, -5] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="w-full relative"
+          >
+            <img
+              src="/images/hero-illustration.png"
+              alt="NEXIV hero illustration"
+              className="w-full h-auto block object-contain drop-shadow-[0_20px_45px_rgba(0,0,0,0.45)] [image-rendering:-webkit-optimize-contrast] transform-gpu"
+              loading="eager"
+            />
+          </motion.div>
         </motion.div>
 
       </div>
