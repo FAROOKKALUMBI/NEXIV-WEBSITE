@@ -10,14 +10,14 @@ interface CtaProps {
 
 export function CTA({ onOpenContact }: CtaProps) {
   return (
-    <section id="contact" className="w-full bg-[#FFFFFF] py-16 sm:py-20 px-5 sm:px-10">
+    <section id="contact" className="w-full bg-[#FFFFFF] py-[80px] lg:py-[100px] px-5 sm:px-10">
       <div className="w-full max-w-[1040px] mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="relative bg-[#293541] rounded-[16px] px-6 sm:px-12 py-14 sm:py-16 text-center shadow-2xl overflow-hidden"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="relative bg-[#293541] rounded-2xl px-6 sm:px-12 py-12 sm:py-16 text-center shadow-2xl overflow-hidden"
         >
           {/* Subtle inner top glow */}
           <div
@@ -26,13 +26,13 @@ export function CTA({ onOpenContact }: CtaProps) {
           />
 
           <div className="relative z-10">
-            {/* Envelope icon in lime green square */}
-            <div className="w-12 h-12 bg-[#afe714] rounded-[8px] flex items-center justify-center mx-auto mb-6 shadow-sm">
-              <Mail className="w-5 h-5 text-[#293541]" />
+            {/* Envelope icon in 56x56 lime green square */}
+            <div className="w-14 h-14 bg-[#afe714] rounded-lg flex items-center justify-center mx-auto mb-6 shadow-sm">
+              <Mail className="w-6 h-6 text-[#293541]" />
             </div>
 
-            {/* H2 */}
-            <h2 className="font-poppins font-bold text-[28px] sm:text-[34px] lg:text-[38px] text-white leading-[1.18] max-w-[680px] mx-auto tracking-tight mb-3">
+            {/* H2: 2-line break on desktop */}
+            <h2 className="font-poppins font-bold text-[24px] sm:text-[34px] lg:text-[38px] text-white leading-[1.18] max-w-[680px] mx-auto tracking-tight mb-3">
               Ready To Grow Your Business Through <br className="hidden sm:inline" />
               Great Design?
             </h2>
@@ -43,10 +43,10 @@ export function CTA({ onOpenContact }: CtaProps) {
             </p>
 
             {/* Buttons row */}
-            <div className="flex flex-wrap items-center justify-center gap-3.5 mb-8">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 w-full sm:w-auto">
               <button
                 onClick={onOpenContact}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[5px] border border-white/30 bg-[#293541] hover:border-white/60 text-white font-inter font-medium text-[13.5px] transition-all cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md border border-white/30 bg-[#293541] hover:border-white/80 hover:bg-white/5 text-white font-inter font-medium text-[13.5px] transition-all duration-200 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#afe714]"
               >
                 <MessageSquare className="w-4 h-4 text-white" />
                 <span>Start a Project</span>
@@ -54,7 +54,7 @@ export function CTA({ onOpenContact }: CtaProps) {
 
               <a
                 href="tel:+265884288849"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[5px] bg-[#afe714] hover:bg-[#9ccf10] text-[#293541] font-inter font-bold text-[13.5px] transition-all shadow-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md bg-[#afe714] hover:bg-[#9ccf10] hover:scale-[1.02] text-[#293541] font-inter font-bold text-[13.5px] transition-all duration-200 shadow-sm focus-visible:ring-2 focus-visible:ring-[#afe714]"
               >
                 <Phone className="w-4 h-4 text-[#293541]" />
                 <span>Call Us Now</span>
@@ -62,7 +62,7 @@ export function CTA({ onOpenContact }: CtaProps) {
             </div>
 
             {/* Contact row */}
-            <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-white/80 font-inter text-[13px]">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-white/80 font-inter text-[13px]">
               <a
                 href="tel:+265884288849"
                 className="inline-flex items-center gap-2 hover:text-[#afe714] transition-colors"

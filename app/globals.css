@@ -12,10 +12,25 @@ body {
   font-family: var(--font-inter), system-ui, sans-serif;
   background: #293541;
   color: #FFFFFF;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-poppins), system-ui, sans-serif;
 }
 
+/* Accessibility: Focus visible rings */
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #293541, 0 0 0 4px #afe714;
+}
 
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

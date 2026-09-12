@@ -82,7 +82,7 @@ export function Services({ onSelectService }: ServicesProps) {
   ];
 
   return (
-    <section id="services" className="relative bg-[#293541] py-20 lg:py-24 text-white overflow-hidden">
+    <section id="services" className="relative bg-[#293541] py-[80px] lg:py-[100px] text-white overflow-hidden">
       {/* Top-right soft glow */}
       <div
         aria-hidden="true"
@@ -107,7 +107,7 @@ export function Services({ onSelectService }: ServicesProps) {
             {/* "View All Services →" button */}
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-[5px] border border-white/30 bg-transparent hover:border-[#afe714] text-white font-inter font-medium text-[13px] transition-all group cursor-pointer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-white/30 bg-transparent hover:border-[#afe714] hover:bg-white/5 text-white font-inter font-medium text-[13px] transition-all duration-200 group cursor-pointer focus-visible:ring-2 focus-visible:ring-[#afe714]"
             >
               <span>View All Services</span>
               <ArrowRight className="w-3.5 h-3.5 text-white transition-transform duration-200 group-hover:translate-x-1" />
@@ -115,26 +115,25 @@ export function Services({ onSelectService }: ServicesProps) {
           </div>
         </div>
 
-        {/* Grid of 6 service cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5 sm:gap-4 lg:gap-4">
+        {/* Grid of 6 service cards: 2 col on mobile, 3 col on tablet, 6 col on desktop */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-5">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
-              whileHover={{ y: -4, transition: { duration: 0.2 } }}
               onClick={() => onSelectService && onSelectService(service.title)}
-              className="bg-[#afe714] rounded-[8px] p-5 sm:p-6 flex flex-col items-center justify-center text-center cursor-pointer transition-all shadow-md group aspect-[1/1.08]"
+              className="bg-[#afe714] rounded-[10px] p-5 flex flex-col items-center justify-center text-center cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(175,231,20,0.25)] group aspect-[1/1.1]"
             >
               {/* Dark container box with lime green custom icon */}
-              <div className="w-12 h-12 bg-[#293541] rounded-[8px] flex items-center justify-center mb-3.5 shadow-sm">
+              <div className="w-12 h-12 bg-[#293541] rounded-lg flex items-center justify-center mb-3.5 shadow-sm shrink-0">
                 {service.icon}
               </div>
 
               {/* Label */}
-              <div className="font-inter font-bold text-[13.5px] text-[#293541] leading-tight">
+              <div className="font-inter font-bold text-[13.5px] text-[#293541] leading-tight mt-1">
                 {service.title}
               </div>
             </motion.div>

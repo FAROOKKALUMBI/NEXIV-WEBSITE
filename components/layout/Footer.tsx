@@ -46,7 +46,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="relative bg-[#293541] pt-20 pb-0 overflow-hidden text-white border-t border-white/[0.05]">
+    <footer className="relative bg-[#293541] pt-16 lg:pt-20 pb-0 overflow-hidden text-white border-t border-white/[0.05]">
       {/* Top-left soft glow */}
       <div
         aria-hidden="true"
@@ -54,16 +54,16 @@ export function Footer() {
       />
 
       <div className="relative z-10 max-w-[1280px] mx-auto px-5 sm:px-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-[60px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-10 lg:gap-[60px]">
           
           {/* Column 1: Brand & Socials */}
           <div className="flex flex-col items-start">
             <Logo variant="dark" size="lg" />
-            <p className="font-inter text-[14px] text-white/60 mt-[12px] max-w-xs leading-relaxed">
+            <p className="font-inter text-[14px] text-white/60 mt-3 max-w-xs leading-relaxed">
               Your Trusted Creative Partner.
             </p>
 
-            <div className="flex items-center gap-[12px] mt-[24px]">
+            <div className="flex items-center gap-3 mt-6">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
@@ -71,9 +71,11 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.name}
-                  className="w-[36px] h-[36px] rounded-[8px] bg-white/[0.08] hover:bg-[#afe714] text-white hover:text-[#293541] flex items-center justify-center transition-colors"
+                  className="w-9 h-9 rounded-lg bg-white/[0.08] hover:bg-[#afe714]/20 text-white flex items-center justify-center transition-colors duration-200 group focus-visible:ring-2 focus-visible:ring-[#afe714]"
                 >
-                  {social.icon}
+                  <span className="group-hover:text-[#afe714] transition-colors duration-200">
+                    {social.icon}
+                  </span>
                 </a>
               ))}
             </div>
@@ -81,10 +83,10 @@ export function Footer() {
 
           {/* Column 2: Company */}
           <div>
-            <h4 className="font-poppins font-semibold text-[14px] text-white mb-[20px]">
+            <h4 className="font-poppins font-semibold text-[14px] text-white mb-5">
               Company
             </h4>
-            <ul className="space-y-[4px] font-inter text-[14px] text-white/65 leading-[2.2]">
+            <ul className="space-y-3 font-inter text-[14px] text-white/65">
               <li>
                 <a href="#home" className="hover:text-[#afe714] transition-colors">
                   Home
@@ -106,8 +108,8 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-[#afe714] transition-colors">
-                  Contact
+                <a href="#process" className="hover:text-[#afe714] transition-colors">
+                  Process
                 </a>
               </li>
             </ul>
@@ -115,10 +117,10 @@ export function Footer() {
 
           {/* Column 3: Our Services */}
           <div>
-            <h4 className="font-poppins font-semibold text-[14px] text-white mb-[20px]">
+            <h4 className="font-poppins font-semibold text-[14px] text-white mb-5">
               Our Services
             </h4>
-            <ul className="space-y-[4px] font-inter text-[14px] text-white/65 leading-[2.2]">
+            <ul className="space-y-3 font-inter text-[14px] text-white/65">
               <li>
                 <a href="#services" className="hover:text-[#afe714] transition-colors">
                   Graphic Design
@@ -154,10 +156,10 @@ export function Footer() {
 
           {/* Column 4: Contact Us */}
           <div>
-            <h4 className="font-poppins font-semibold text-[14px] text-white mb-[20px]">
+            <h4 className="font-poppins font-semibold text-[14px] text-white mb-5">
               Contact Us
             </h4>
-            <div className="space-y-[12px] font-inter text-[14px] text-white/65 leading-relaxed">
+            <div className="space-y-3 font-inter text-[14px] text-white/65 leading-relaxed">
               <a
                 href="tel:+265884288849"
                 className="flex items-center gap-2.5 hover:text-[#afe714] transition-colors group"
@@ -183,13 +185,13 @@ export function Footer() {
 
         </div>
 
-        <div className="w-full h-[1px] bg-white/[0.08] mt-[60px]" />
+        <div className="w-full h-[1px] bg-white/[0.08] mt-12 lg:mt-16" />
 
-        <div className="py-[28px] flex flex-col sm:flex-row items-center justify-between gap-4 font-inter text-[13px] text-white/50">
+        <div className="py-7 flex flex-col sm:flex-row items-center justify-between gap-4 font-inter text-[13px] text-white/50">
           <div>
             &copy; 2026 Nexiv Limited. All rights reserved.
           </div>
-          <div className="flex items-center space-x-[32px]">
+          <div className="flex items-center space-x-6 sm:space-x-8">
             <Link href="#privacy" className="hover:text-[#afe714] transition-colors font-inter">
               Privacy Policy
             </Link>
