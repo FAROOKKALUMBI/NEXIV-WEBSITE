@@ -10,7 +10,7 @@ interface HeroProps {
 
 export function Hero({ onOpenContact }: HeroProps) {
   return (
-    <section className="relative bg-[#293541] pt-14 lg:pt-20 pb-0 overflow-hidden">
+    <section className="relative bg-[#293541] pt-10 sm:pt-12 lg:pt-14 pb-0 overflow-hidden">
       {/* Soft diffused ambient glow in background matching Figma target */}
       <div
         aria-hidden="true"
@@ -26,7 +26,7 @@ export function Hero({ onOpenContact }: HeroProps) {
       />
 
       {/* Hero grid */}
-      <div className="relative z-10 max-w-[1280px] mx-auto px-5 sm:px-10 grid grid-cols-1 lg:grid-cols-[1fr_1.32fr] gap-10 items-center">
+      <div className="relative z-10 max-w-[1280px] mx-auto px-5 sm:px-10 grid grid-cols-1 lg:grid-cols-[1fr_1.25fr] gap-8 lg:gap-10 items-center">
         
         {/* LEFT COLUMN */}
         <motion.div
@@ -36,41 +36,41 @@ export function Hero({ onOpenContact }: HeroProps) {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           {/* H1: Exact 2 lines as in target */}
-          <h1 className="font-poppins font-bold text-[36px] sm:text-[46px] lg:text-[52px] leading-[1.12] tracking-[-0.5px] text-white max-w-[580px] mb-7">
+          <h1 className="font-inter font-semibold text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.12] tracking-[-0.02em] text-white max-w-[480px] mb-4">
             The Nexus Of Creativity<br />And Innovation.
           </h1>
 
           {/* Paragraph: 3 lines matching target */}
-          <p className="font-inter font-normal text-[16px] sm:text-[18px] lg:text-[19px] leading-[1.55] text-white/85 max-w-[480px] mb-9">
+          <p className="font-inter font-normal text-[14px] sm:text-[15px] leading-[1.5] text-white/80 max-w-[420px] mb-6">
             Every Great Brand starts as an idea.<br className="hidden sm:inline" />
             We turn yours into powerful visuals,<br className="hidden sm:inline" />
             Brands &amp; Digital Experiences.
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center gap-3.5">
             <button
               onClick={() => {
                 const el = document.getElementById("work") || document.getElementById("services");
                 el?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="font-inter font-medium text-[15px] text-white border border-white/50 px-[26px] py-3.5 rounded-md hover:bg-white/5 transition cursor-pointer"
+              className="font-inter font-medium text-[13.5px] text-white border border-white/50 px-5 py-2.5 rounded-[5px] hover:bg-white/5 transition cursor-pointer"
             >
               View Our Work
             </button>
             <button
               onClick={onOpenContact}
-              className="font-inter font-semibold text-[15px] text-black bg-[#afe714] px-[26px] py-3.5 rounded-md flex items-center gap-2 hover:bg-[#9ccf10] transition shadow-sm cursor-pointer group"
+              className="font-inter font-semibold text-[13.5px] text-black bg-[#afe714] px-5 py-2.5 rounded-[5px] flex items-center gap-2 hover:bg-[#9ccf10] transition shadow-sm cursor-pointer group"
             >
               <span>Start a Project</span>
-              <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-1" />
+              <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-1" />
             </button>
           </div>
         </motion.div>
 
         {/* RIGHT COLUMN — illustration */}
         <motion.div
-          className="w-full max-w-[640px] ml-auto flex items-center justify-center lg:justify-end"
+          className="w-full max-w-[480px] lg:max-w-[520px] ml-auto flex items-center justify-center lg:justify-end"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}

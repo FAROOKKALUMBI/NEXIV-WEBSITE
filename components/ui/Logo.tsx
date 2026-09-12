@@ -7,18 +7,17 @@ import { cn } from "@/lib/utils";
 interface LogoProps {
   variant?: "light" | "dark";
   className?: string;
-  size?: "md" | "lg";
+  size?: "sm" | "md" | "lg";
 }
 
 export function Logo({ variant = "light", className, size = "md" }: LogoProps) {
   const isDark = variant === "dark";
-  const boxSize = size === "lg" ? "w-12 h-12 rounded-[10px]" : "w-10 h-10 rounded-[9px]";
-  const textSize = size === "lg" ? "text-[26px]" : "text-[22px]";
+  const boxSize = size === "lg" ? "w-10 h-10 rounded-[8px]" : "w-[34px] h-[34px] rounded-[7px]";
+  const textSize = size === "lg" ? "text-[22px]" : "text-[18px]";
 
   return (
-    <Link href="/" className={cn("inline-flex items-center gap-3 group cursor-pointer select-none", className)}>
-      {/* Dark rounded box with neon green cursive N emblem matching Image 3 */}
-      <div className={cn("bg-[#293541] flex items-center justify-center p-2 shadow-sm shrink-0 border border-white/5", boxSize)}>
+    <Link href="/" className={cn("inline-flex items-center gap-2.5 group cursor-pointer select-none", className)}>
+      <div className={cn("bg-[#293541] flex items-center justify-center p-1.5 shadow-sm shrink-0 border border-white/5", boxSize)}>
         <svg
           viewBox="0 0 100 100"
           fill="none"
@@ -42,7 +41,7 @@ export function Logo({ variant = "light", className, size = "md" }: LogoProps) {
         >
           NEXIV
         </span>
-        <span className={cn("text-[10px] font-bold ml-1 align-super", isDark ? "text-[#afe714]" : "text-[#293541]/70")}>
+        <span className={cn("text-[9px] font-bold ml-0.5 align-super", isDark ? "text-[#afe714]" : "text-[#293541]/70")}>
           TM
         </span>
       </div>
