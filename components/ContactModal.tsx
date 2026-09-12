@@ -261,7 +261,7 @@ export function ContactModal({ isOpen, onClose, defaultService }: ContactModalPr
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full inline-flex items-center justify-center py-3 rounded-md bg-[#afe714] hover:bg-[#9dd110] text-[#2a3541] font-bold text-sm transition-all shadow-md cursor-pointer disabled:opacity-50"
+                      className="w-full inline-flex items-center justify-center py-3 rounded-md bg-[#afe714] text-[#2a3541] hover:bg-white hover:text-[#2a3541] active:bg-white/90 active:scale-[0.98] border border-transparent hover:border-black/10 font-bold text-sm transition-all shadow-md cursor-pointer disabled:opacity-50 focus-visible:ring-2 focus-visible:ring-[#afe714]"
                     >
                       {isSubmitting ? (
                         <>

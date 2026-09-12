@@ -1,7 +1,47 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
+
+function AnimatedNumber({ value }: { value: string }) {
+  const numericValue = parseInt(value, 10);
+  const suffix = value.replace(/[0-9]/g, "");
+  const [displayValue, setDisplayValue] = useState(0);
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+  useEffect(() => {
+    if (isInView && !isNaN(numericValue)) {
+      const end = numericValue;
+      const duration = 1400; // 1.4s
+      const startTime = performance.now();
+
+      const updateCount = (currentTime: number) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // smooth easeOutExpo
+        const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+        const current = Math.floor(ease * end);
+        setDisplayValue(current);
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCount);
+        } else {
+          setDisplayValue(end);
+        }
+      };
+
+      requestAnimationFrame(updateCount);
+    }
+  }, [isInView, numericValue]);
+
+  return (
+    <span ref={ref}>
+      {displayValue}
+      {suffix}
+    </span>
+  );
+}
 
 export function StatsBar() {
   const stats = [
@@ -43,7 +83,7 @@ export function StatsBar() {
               >
                 <div>
                   <div className="font-poppins font-bold text-[32px] lg:text-[36px] text-[#293541] leading-none">
-                    {stat.number}
+                    <AnimatedNumber value={stat.number} />
                   </div>
                   <div className="font-inter font-medium text-[13px] text-[#293541] mt-1">
                     {stat.label}
