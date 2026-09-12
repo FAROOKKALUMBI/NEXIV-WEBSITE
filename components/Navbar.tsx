@@ -22,8 +22,7 @@ export function Navbar({ onOpenContact }: NavbarProps) {
           <a href="#home" className="font-inter font-medium text-[14px] text-black bg-[#F3F3F3] px-3.5 py-1.5 rounded-md">Home</a>
           <a href="#about" className="font-inter font-medium text-[14px] text-black hover:text-black/70 transition">About</a>
           <a href="#services" className="font-inter font-medium text-[14px] text-black hover:text-black/70 transition">Services</a>
-          <a href="#work" className="font-inter font-medium text-[14px] text-black hover:text-black/70 transition">Work</a>
-          <a href="#process" className="font-inter font-medium text-[14px] text-black hover:text-black/70 transition">Process</a>
+          <a href="#contact" className="font-inter font-medium text-[14px] text-black hover:text-black/70 transition">Contact</a>
         </div>
 
         {/* RIGHT — CTA */}
@@ -56,8 +55,7 @@ export function Navbar({ onOpenContact }: NavbarProps) {
             <a href="#home" onClick={() => setIsOpen(false)} className="font-inter text-[14px] font-medium text-black py-2 border-b border-slate-100">Home</a>
             <a href="#about" onClick={() => setIsOpen(false)} className="font-inter text-[14px] font-medium text-black py-2 border-b border-slate-100">About</a>
             <a href="#services" onClick={() => setIsOpen(false)} className="font-inter text-[14px] font-medium text-black py-2 border-b border-slate-100">Services</a>
-            <a href="#work" onClick={() => setIsOpen(false)} className="font-inter text-[14px] font-medium text-black py-2 border-b border-slate-100">Work</a>
-            <a href="#process" onClick={() => setIsOpen(false)} className="font-inter text-[14px] font-medium text-black py-2 border-b border-slate-100">Process</a>
+            <a href="#contact" onClick={() => setIsOpen(false)} className="font-inter text-[14px] font-medium text-black py-2 border-b border-slate-100">Contact</a>
             <div className="pt-2">
               <button
                 onClick={() => {

@@ -7,7 +7,6 @@ import { Hero } from "@/components/sections/Hero";
 import { StatsBar } from "@/components/sections/StatsBar";
 import { About } from "@/components/sections/About";
 import { Services } from "@/components/sections/Services";
-import { Process } from "@/components/sections/Process";
 import { CTA } from "@/components/sections/CTA";
 import { Footer } from "@/components/layout/Footer";
 import { ContactModal } from "@/components/ContactModal";
@@ -45,13 +44,10 @@ export default function Home() {
       {/* SECTION 6 — SERVICES */}
       <Services onSelectService={(service) => handleOpenContact(service)} />
 
-      {/* SECTION 7 — PROCESS */}
-      <Process />
-
-      {/* SECTION 8 — CTA */}
+      {/* SECTION 7 — CTA */}
       <CTA onOpenContact={() => handleOpenContact()} />
 
-      {/* SECTION 9 — FOOTER */}
+      {/* SECTION 8 — FOOTER */}
       <Footer />
 
       {/* Interactive Project Inquiry Modal */}
@@ -63,4 +59,3 @@ export default function Home() {
     </main>
   );
 }
-
