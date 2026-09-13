@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { HeroIllustration } from "./ui/HeroIllustration";
 
 interface HeroProps {
   onOpenContact?: () => void;
@@ -67,9 +68,9 @@ export function Hero({ onOpenContact }: HeroProps) {
           </div>
         </motion.div>
 
-        {/* RIGHT COLUMN — HD illustration with gentle floating ambient animation */}
+        {/* RIGHT COLUMN — Ultra-HD Vector Illustration with gentle floating ambient animation */}
         <motion.div
-          className="w-full max-w-[500px] lg:max-w-[560px] mx-auto lg:ml-auto flex items-center justify-center lg:justify-end relative"
+          className="w-full max-w-[520px] lg:max-w-[580px] mx-auto lg:ml-auto flex items-center justify-center lg:justify-end relative"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
@@ -79,12 +80,7 @@ export function Hero({ onOpenContact }: HeroProps) {
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             className="w-full relative"
           >
-            <img
-              src="/images/hero-illustration.png"
-              alt="NEXIV hero illustration"
-              className="w-full h-auto block object-contain drop-shadow-[0_20px_45px_rgba(0,0,0,0.45)] [image-rendering:-webkit-optimize-contrast] transform-gpu"
-              loading="eager"
-            />
+            <HeroIllustration />
           </motion.div>
         </motion.div>
 
