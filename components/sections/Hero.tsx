@@ -3,7 +3,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { HeroIllustration } from "../ui/HeroIllustration";
 
 interface HeroProps {
   onOpenContact?: () => void;
@@ -11,23 +10,22 @@ interface HeroProps {
 
 export function Hero({ onOpenContact }: HeroProps) {
   return (
-    <section id="home" className="relative bg-[#293541] pt-10 sm:pt-14 lg:pt-16 pb-6 overflow-hidden">
-      {/* Soft ambient glows in background */}
-      <div
-        aria-hidden="true"
-        className="absolute -top-32 -left-28 w-[680px] h-[680px] rounded-full bg-[#afe714]/14 blur-[130px] pointer-events-none select-none z-0"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute top-10 left-1/4 w-[480px] h-[480px] rounded-full bg-[#53ede3]/10 blur-[140px] pointer-events-none select-none z-0"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute -bottom-28 right-0 w-[780px] h-[780px] rounded-full bg-[#afe714]/12 blur-[150px] pointer-events-none select-none z-0"
-      />
+    <section
+      id="home"
+      className="relative overflow-hidden pt-10 sm:pt-14 lg:pt-16 lg:pb-4"
+      style={{
+        background: `
+          linear-gradient(to bottom, transparent 0%, transparent 72%, rgba(41, 53, 65, 0.56) 88%, #293541 100%),
+          radial-gradient(ellipse 30% 72% at -7% 14%, rgba(112, 149, 54, 0.40) 0%, rgba(87, 119, 53, 0.25) 48%, transparent 86%),
+          radial-gradient(ellipse 22% 43% at 29% 2%, rgba(103, 139, 56, 0.24) 0%, rgba(67, 87, 57, 0.13) 54%, transparent 88%),
+          radial-gradient(ellipse 34% 70% at -5% 105%, rgba(112, 149, 54, 0.43) 0%, rgba(82, 112, 51, 0.25) 50%, transparent 88%),
+          #293541
+        `,
+      }}
+    >
 
       {/* Hero grid */}
-      <div className="relative z-10 max-w-[1280px] mx-auto px-5 sm:px-10 grid grid-cols-1 lg:grid-cols-[1fr_1.22fr] gap-10 lg:gap-12 items-center">
+      <div className="relative z-10 mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-10 px-5 sm:px-10 lg:grid-cols-[1fr_1.22fr] lg:gap-12">
         
         {/* LEFT COLUMN */}
         <motion.div
@@ -37,12 +35,12 @@ export function Hero({ onOpenContact }: HeroProps) {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           {/* H1: Exact 2 lines */}
-          <h1 className="font-poppins font-bold text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.12] tracking-[-0.5px] text-white max-w-[500px] mb-6">
+          <h1 className="font-poppins font-bold text-[32px] sm:text-[38px] lg:text-[42px] leading-[1.12] tracking-[-0.5px] text-white max-w-[500px] mb-6 lg:mb-12">
             The Nexus Of Creativity<br />And Innovation.
           </h1>
 
           {/* Paragraph: Exact 2 lines only as requested */}
-          <p className="font-inter font-normal text-[15px] sm:text-[16px] leading-[1.55] text-white/85 max-w-[480px] mb-8">
+          <p className="font-inter font-normal text-[15px] sm:text-[16px] leading-[1.55] text-white/85 max-w-[480px] mb-8 lg:mb-16">
             Every Great Brand starts as an idea. We turn yours into<br className="hidden sm:inline" />
             powerful visuals, Brands &amp; Digital Experiences.
           </p>
@@ -68,9 +66,9 @@ export function Hero({ onOpenContact }: HeroProps) {
           </div>
         </motion.div>
 
-        {/* RIGHT COLUMN — Ultra-HD Vector Illustration with gentle floating ambient animation */}
+        {/* RIGHT COLUMN — Original illustration image */}
         <motion.div
-          className="w-full max-w-[520px] lg:max-w-[580px] mx-auto lg:ml-auto flex items-center justify-center lg:justify-end relative"
+          className="relative mx-auto flex w-full max-w-[500px] items-center justify-center lg:ml-auto lg:max-w-[640px] lg:translate-y-8 lg:justify-end"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
@@ -80,7 +78,12 @@ export function Hero({ onOpenContact }: HeroProps) {
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             className="w-full relative"
           >
-            <HeroIllustration />
+            <img
+              src="/images/hero-illustration.png"
+              alt="NEXIV design workspace illustration"
+              className="block h-auto w-full object-contain [image-rendering:-webkit-optimize-contrast]"
+              loading="eager"
+            />
           </motion.div>
         </motion.div>
 
