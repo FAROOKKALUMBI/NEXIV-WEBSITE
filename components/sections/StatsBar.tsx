@@ -63,10 +63,16 @@ export function StatsBar() {
   ];
 
   return (
-    <section className="bg-[#293541] pt-4 pb-14 sm:pb-16 relative z-10">
-      <div className="max-w-[1280px] mx-auto px-5 sm:px-10">
+    <section
+      className="relative z-10 pt-4 pb-28 sm:pb-32"
+      style={{
+        background:
+          "linear-gradient(180deg, #293541 0%, #293541 48%, #5b6570 68%, #c4c8cb 86%, #F5F5F5 100%)",
+      }}
+    >
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-10">
         <motion.div
-          className="bg-[#afe714] rounded-[10px] px-6 sm:px-10 lg:px-12 py-5 lg:py-6 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0 shadow-lg"
+          className="bg-[#afe714] rounded-[10px] px-6 sm:px-10 lg:px-12 py-7 lg:py-8 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0 shadow-lg"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
