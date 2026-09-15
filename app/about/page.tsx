@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { BadgeCheck, ChevronDown, Eye, Globe2, ShieldCheck, Target, UsersRound } from "lucide-react";
 import { TopBar } from "@/components/layout/TopBar";
 import { Navbar } from "@/components/layout/Navbar";
@@ -23,6 +24,13 @@ const faqs = [
   { question: "Can you help with website hosting and domain registration?", answer: "Absolutely! We can assist you with website hosting and domain registration to ensure a seamless setup process. We will recommend reliable hosting providers and guide you through the domain registration process." },
 ];
 
+function FaqAccordion() {
+  const [openFaq, setOpenFaq] = useState(4);
+  const accordionId = useId();
+
+  return <div className="mx-auto max-w-4xl"><div className="text-center"><span className="inline-flex rounded-full bg-[#afe714] px-4 py-2 font-inter text-sm font-bold text-[#293541]">FAQS</span><h2 className="mt-5 font-poppins text-3xl font-bold leading-tight sm:text-4xl">Frequently Asked Questions</h2><p className="mx-auto mt-3 max-w-2xl font-inter text-base leading-relaxed text-[#293541]/70 sm:text-lg">If you have other questions you&apos;d like answered, feel free to email us.</p></div><div className="mt-8 overflow-hidden rounded-2xl border border-[#293541]/15 bg-white shadow-sm sm:mt-10">{faqs.map((faq, index) => { const isOpen = openFaq === index; const panelId = `${accordionId}-${index}`; return <div key={faq.question} className="border-b border-[#293541]/15 last:border-b-0"><button type="button" onClick={() => setOpenFaq(isOpen ? -1 : index)} aria-expanded={isOpen} aria-controls={panelId} className={`group flex w-full items-center justify-between gap-4 px-5 py-5 text-left font-inter text-base font-medium transition-all duration-200 sm:px-7 sm:py-6 sm:text-lg ${isOpen ? "bg-[#afe714]/45 text-[#293541]" : "text-[#293541] hover:bg-[#afe714]/15"}`}><span>{faq.question}</span><span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors ${isOpen ? "bg-[#293541] text-white" : "bg-[#293541]/8 text-[#293541] group-hover:bg-[#afe714]"}`}><ChevronDown size={20} className={`transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} /></span></button><AnimatePresence initial={false}>{isOpen && <motion.div id={panelId} role="region" aria-label={faq.question} initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.24, ease: "easeOut" }} className="overflow-hidden"><p className="bg-white px-5 pb-6 pt-1 font-inter text-sm leading-relaxed text-[#293541]/75 sm:px-7 sm:pb-7 sm:text-base">{faq.answer}</p></motion.div>}</AnimatePresence></div>; })}</div></div>;
+}
+
 function ComingSoon({ label }: { label: string }) {
   return <div className="py-12 text-center sm:py-16"><span className="inline-flex rounded-full bg-[#afe714] px-4 py-2 font-inter text-sm font-bold text-[#293541]">{label}</span><h2 className="mt-5 font-poppins text-3xl font-bold sm:text-4xl">Coming soon.</h2><p className="mx-auto mt-3 max-w-md font-inter text-base text-[#293541]/70">This section will be updated soon.</p></div>;
 }
@@ -40,7 +48,6 @@ function MissionVisionValues() {
 
 export default function AboutPage() {
   const [activeTab, setActiveTab] = useState("overview");
-  const [openFaq, setOpenFaq] = useState(4);
   const [isModalOpen, setIsModalOpen] = useState(false);
   useEffect(() => {
     const setFromHash = () => {
@@ -61,9 +68,9 @@ export default function AboutPage() {
       {activeTab === "overview" && <><div className="grid gap-10 lg:grid-cols-[1.2fr_.8fr] lg:items-center lg:gap-16"><div><span className="inline-flex rounded-full bg-[#afe714] px-4 py-2 font-inter text-sm font-bold text-[#293541]">COMPANY OVERVIEW</span><h2 className="mt-5 font-poppins text-3xl font-bold leading-tight sm:text-4xl">Where Creativity Meets Technology</h2><div className="mt-6 space-y-5 text-base leading-relaxed text-[#293541]/80 sm:text-lg"><p>At Nexiv, we bring creativity, design, and technology together to create brands and digital experiences that make an impact. We combine strategic thinking, visual design, and modern technology to help businesses turn ideas into meaningful digital solutions.</p><p>From brand identity and graphic design to UI/UX, websites, motion design, and digital experiences, we create solutions that are visually engaging, purposeful, and built to perform.</p><p>We work with startups, businesses, organizations, and individuals to develop strong visual identities and digital products that connect with their audiences and stand out in a competitive digital world.</p><p>Through a multidisciplinary approach, we blend strategy, creativity, and technology to deliver work that is not only beautiful, but functional, memorable, and built for growth.</p></div></div><div className="mx-auto w-full max-w-[520px] overflow-visible lg:max-w-none"><img src="/images/company-overview-creative.jpg" alt="Hand using a design mouse surrounded by creative-tool icons" className="-ml-[9%] h-auto w-[118%] max-w-none mix-blend-multiply brightness-[1.3] contrast-[1.08]" style={{ maskImage: "radial-gradient(ellipse 80% 80% at center, black 48%, transparent 100%)", WebkitMaskImage: "radial-gradient(ellipse 80% 80% at center, black 48%, transparent 100%)" }} /></div></div><MissionVisionValues /></>}
       {activeTab === "leadership" && <ComingSoon label="OUR TEAM" />}
       {activeTab === "partners" && <ComingSoon label="OUR PARTNERS" />}
-      {activeTab === "faqs" && <div className="mx-auto max-w-4xl"><div className="text-center"><h2 className="font-poppins text-3xl font-bold sm:text-4xl">Frequently Asked Questions</h2><p className="mt-3 font-inter text-base text-[#293541]/70">If you have other questions you&apos;d like answered feel free to email us.</p></div><div className="mt-10 overflow-hidden rounded-xl border border-[#293541]/15 bg-white">{faqs.map((faq, index) => { const isOpen = openFaq === index; return <div key={faq.question} className="border-b border-[#293541]/15 last:border-b-0"><button onClick={() => setOpenFaq(isOpen ? -1 : index)} aria-expanded={isOpen} className={`flex w-full items-center justify-between gap-5 px-6 py-5 text-left font-inter text-base font-medium transition-colors sm:px-7 ${isOpen ? "bg-[#afe714]/35 text-[#293541]" : "hover:bg-[#afe714]/10"}`}><span>{faq.question}</span><ChevronDown size={21} className={`shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`} /></button>{isOpen && <div className="bg-white px-6 py-5 font-inter text-sm leading-relaxed text-[#293541]/75 sm:px-7 sm:text-base">{faq.answer}</div>}</div>; })}</div></div>}
+      {activeTab === "faqs" && <FaqAccordion />}
     </div></section>
-    {activeTab === "overview" && <CTA onOpenContact={() => setIsModalOpen(true)} />}
+    {(activeTab === "overview" || activeTab === "faqs") && <CTA onOpenContact={() => setIsModalOpen(true)} />}
     <Footer /><ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} defaultService="Full Creative Suite" />
   </main>;
 }
