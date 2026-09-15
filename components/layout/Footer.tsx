@@ -88,27 +88,27 @@ export function Footer() {
             </h4>
             <ul className="space-y-3 font-inter text-[14px] text-white/65">
               <li>
-                <a href="#home" className="hover:text-[#afe714] transition-colors">
+                <a href="/#home" className="hover:text-[#afe714] transition-colors">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#about" className="hover:text-[#afe714] transition-colors">
+                <a href="/about#overview" className="hover:text-[#afe714] transition-colors">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-[#afe714] transition-colors">
+                <a href="/services" className="hover:text-[#afe714] transition-colors">
                   Services
                 </a>
               </li>
               <li>
-                <a href="#work" className="hover:text-[#afe714] transition-colors">
+                <a href="/work" className="hover:text-[#afe714] transition-colors">
                   Work
                 </a>
               </li>
               <li>
-                <a href="#process" className="hover:text-[#afe714] transition-colors">
+                <a href="/process" className="hover:text-[#afe714] transition-colors">
                   Process
                 </a>
               </li>
@@ -122,32 +122,32 @@ export function Footer() {
             </h4>
             <ul className="space-y-3 font-inter text-[14px] text-white/65">
               <li>
-                <a href="#services" className="hover:text-[#afe714] transition-colors">
+                <a href="/services#graphic-design" className="hover:text-[#afe714] transition-colors">
                   Graphic Design
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-[#afe714] transition-colors">
+                <a href="/services#web-design" className="hover:text-[#afe714] transition-colors">
                   Web Design
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-[#afe714] transition-colors">
+                <a href="/services#branding" className="hover:text-[#afe714] transition-colors">
                   Branding
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-[#afe714] transition-colors">
+                <a href="/services#ui-ux-design" className="hover:text-[#afe714] transition-colors">
                   UI/UX Design
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-[#afe714] transition-colors">
+                <a href="/services#digital-marketing" className="hover:text-[#afe714] transition-colors">
                   Digital Marketing
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-[#afe714] transition-colors">
+                <a href="/services#motion-design" className="hover:text-[#afe714] transition-colors">
                   Motion &amp; Video
                 </a>
               </li>
@@ -192,10 +192,10 @@ export function Footer() {
             &copy; 2026 Nexiv Limited. All rights reserved.
           </div>
           <div className="flex items-center space-x-6 sm:space-x-8">
-            <Link href="#privacy" className="hover:text-[#afe714] transition-colors font-inter">
+            <Link href="/privacy" className="hover:text-[#afe714] transition-colors font-inter">
               Privacy Policy
             </Link>
-            <Link href="#terms" className="hover:text-[#afe714] transition-colors font-inter">
+            <Link href="/terms" className="hover:text-[#afe714] transition-colors font-inter">
               Terms of Service
             </Link>
           </div>
