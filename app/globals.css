@@ -15,6 +15,17 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  @media (hover: hover) {
+    main article {
+      transition: transform 260ms ease-out, box-shadow 260ms ease-out;
+    }
+
+    main article:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 28px rgb(41 53 65 / 12%);
+    }
+  }
 }
 
 html {
