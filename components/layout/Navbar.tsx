@@ -35,7 +35,6 @@ export function Navbar({ onOpenContact }: NavbarProps) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [aboutSection, setAboutSection] = useState("overview");
 
@@ -49,13 +48,6 @@ export function Navbar({ onOpenContact }: NavbarProps) {
     window.addEventListener("hashchange", updateFromHash);
     return () => window.removeEventListener("hashchange", updateFromHash);
   }, [pathname]);
-
-  useEffect(() => {
-    const updateScrollState = () => setIsScrolled(window.scrollY > 50);
-    updateScrollState();
-    window.addEventListener("scroll", updateScrollState, { passive: true });
-    return () => window.removeEventListener("scroll", updateScrollState);
-  }, []);
 
   useEffect(() => {
     if (pathname !== "/") return;
@@ -76,7 +68,7 @@ export function Navbar({ onOpenContact }: NavbarProps) {
   }, [activeSection, isAboutActive, pathname]);
   const linkClass = (active: boolean) => `font-inter font-medium text-[14px] transition-colors duration-200 ${active ? "rounded-md bg-[#afe714] px-3.5 py-1.5 text-[#293541]" : "px-1 py-1 text-black hover:text-[#66727b]"}`;
 
-  return <nav className={`sticky top-9 z-50 flex h-14 items-center border-b border-black/[0.06] transition-[background-color,box-shadow] duration-300 ease-out ${isScrolled ? "bg-white/95 shadow-md backdrop-blur-sm" : "bg-white/85 shadow-none backdrop-blur-sm"}`}>
+  return <nav className="sticky top-0 z-50 flex h-14 items-center border-b border-black/[0.06] bg-white shadow-sm">
     <div className="mx-auto flex h-full w-full max-w-[1280px] items-center justify-between px-5 sm:px-10">
       <Logo variant="light" />
       <div className="hidden items-center gap-5 md:flex lg:gap-7">

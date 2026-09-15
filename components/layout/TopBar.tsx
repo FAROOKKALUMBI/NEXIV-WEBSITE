@@ -9,7 +9,7 @@ interface TopBarProps {
 
 export function TopBar({ onOpenContact }: TopBarProps) {
   return (
-    <div className="sticky top-0 z-[60] h-9 border-b border-white/[0.08] bg-[#293541]/95 backdrop-blur-sm">
+    <div className="bg-[#293541] h-9 border-b border-white/[0.08] relative z-40">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-10 h-full flex justify-between items-center">
         {/* Contact info - hidden on small mobile, visible from sm up */}
         <div className="hidden sm:flex items-center gap-5">
