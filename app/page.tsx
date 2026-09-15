@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { TopBar } from "@/components/layout/TopBar";
 import { Navbar } from "@/components/layout/Navbar";
 import { Hero } from "@/components/sections/Hero";
@@ -12,6 +13,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ContactModal } from "@/components/ContactModal";
 
 export default function Home() {
+  const router = useRouter();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState<string>("Graphic Design");
 
@@ -43,7 +45,7 @@ export default function Home() {
       </div>
 
       {/* SECTION 5 — ABOUT */}
-      <About onLearnMore={() => handleOpenContact("Full Creative Suite")} />
+      <About onLearnMore={() => router.push("/about#overview")} />
 
       {/* SECTION 6 — SERVICES */}
       <Services onSelectService={(service) => handleOpenContact(service)} />

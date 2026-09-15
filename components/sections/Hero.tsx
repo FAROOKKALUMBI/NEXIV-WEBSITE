@@ -47,15 +47,12 @@ export function Hero({ onOpenContact }: HeroProps) {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
-            <button
-              onClick={() => {
-                const el = document.getElementById("work") || document.getElementById("services");
-                el?.scrollIntoView({ behavior: "smooth" });
-              }}
+            <a
+              href="/work"
               className="font-inter font-medium text-[13.5px] text-white border border-white/50 px-5 py-2.5 rounded-md hover:bg-white/10 hover:border-white/90 active:scale-[0.98] transition-all duration-200 cursor-pointer text-center focus-visible:ring-2 focus-visible:ring-[#afe714]"
             >
               View Our Work
-            </button>
+            </a>
             <button
               onClick={onOpenContact}
               className="font-inter font-semibold text-[13.5px] text-[#293541] bg-[#afe714] px-5 py-2.5 rounded-md flex items-center justify-center gap-2 hover:bg-white hover:text-[#293541] active:bg-white/90 active:scale-[0.98] transition-all duration-200 shadow-sm cursor-pointer group focus-visible:ring-2 focus-visible:ring-[#afe714]"

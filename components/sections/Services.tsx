@@ -106,7 +106,7 @@ export function Services({ onSelectService }: ServicesProps) {
           <div>
             {/* "View All Services →" button */}
             <a
-              href="#contact"
+              href="/services"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-white/30 bg-transparent hover:border-[#afe714] hover:bg-white/5 text-white font-inter font-medium text-[13px] transition-all duration-200 group cursor-pointer focus-visible:ring-2 focus-visible:ring-[#afe714]"
             >
               <span>View All Services</span>

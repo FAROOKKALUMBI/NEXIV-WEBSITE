@@ -18,8 +18,8 @@ const config: Config = {
       },
       fontFamily: {
         poppins: ["var(--font-poppins)", "system-ui", "sans-serif"],
-        inter: ["var(--font-inter)", "system-ui", "sans-serif"],
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        inter: ["Aptos", "var(--font-inter)", "system-ui", "sans-serif"],
+        sans: ["Aptos", "var(--font-inter)", "system-ui", "sans-serif"],
       },
     },
   },
