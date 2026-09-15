@@ -1,5 +1,4 @@
 import { Poppins, Inter } from 'next/font/google';
-import { ScrollEffects } from '@/components/ui/ScrollEffects';
 import './globals.css';
 
 const poppins = Poppins({
@@ -27,7 +26,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
       <body className="font-inter bg-[#293541] text-white antialiased">
-        <ScrollEffects />
         {children}
       </body>
     </html>
