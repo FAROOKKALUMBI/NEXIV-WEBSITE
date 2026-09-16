@@ -1,15 +1,12 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { HeroIllustration } from "./ui/HeroIllustration";
 
-interface HeroProps {
-  onOpenContact?: () => void;
-}
-
-export function Hero({ onOpenContact }: HeroProps) {
+export function Hero() {
   return (
     <section id="home" className="relative bg-[#293541] pt-10 sm:pt-14 lg:pt-16 pb-6 overflow-hidden">
       {/* Soft ambient glows in background */}
@@ -58,13 +55,13 @@ export function Hero({ onOpenContact }: HeroProps) {
             >
               View Our Work
             </button>
-            <button
-              onClick={onOpenContact}
+            <Link
+              href="/start-a-project"
               className="font-inter font-semibold text-[13.5px] text-[#293541] bg-[#afe714] px-5 py-2.5 rounded-md flex items-center justify-center gap-2 hover:bg-white hover:text-[#293541] active:bg-white/90 active:scale-[0.98] transition-all duration-200 shadow-sm cursor-pointer group focus-visible:ring-2 focus-visible:ring-[#afe714]"
             >
               <span>Start a Project</span>
               <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-1 text-[#293541]" />
-            </button>
+            </Link>
           </div>
         </motion.div>
 

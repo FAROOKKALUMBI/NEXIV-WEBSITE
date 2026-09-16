@@ -4,11 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
-interface ServicesProps {
-  onSelectService?: (serviceName: string) => void;
-}
-
-export function Services({ onSelectService }: ServicesProps) {
+export function Services() {
   const services = [
     {
       title: "Graphic Design",
@@ -118,13 +114,13 @@ export function Services({ onSelectService }: ServicesProps) {
         {/* Grid of 6 service cards: 2 col on mobile, 3 col on tablet, 6 col on desktop */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-5">
           {services.map((service, index) => (
-            <motion.div
+            <motion.a
+              href={`/start-a-project?service=${encodeURIComponent(service.title)}`}
               key={service.title}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
-              onClick={() => onSelectService && onSelectService(service.title)}
               className="bg-[#afe714] rounded-[10px] p-5 flex flex-col items-center justify-center text-center cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(175,231,20,0.25)] group aspect-[1/1.1]"
             >
               {/* Dark container box with lime green custom icon */}
@@ -136,7 +132,7 @@ export function Services({ onSelectService }: ServicesProps) {
               <div className="font-inter font-bold text-[13.5px] text-[#293541] leading-tight mt-1">
                 {service.title}
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>

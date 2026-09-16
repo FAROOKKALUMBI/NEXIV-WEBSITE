@@ -2,11 +2,10 @@
 
 import React, { useEffect, useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Logo } from "../ui/Logo";
-
-interface NavbarProps { onOpenContact?: () => void; }
 
 const navLinks = [
   { name: "Home", href: "/#home", section: "home" },
@@ -31,7 +30,7 @@ const normaliseAboutSection = (hash: string) => {
   return aboutLinks.some((link) => link.section === section) ? section : "overview";
 };
 
-export function Navbar({ onOpenContact }: NavbarProps) {
+export function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
@@ -85,14 +84,14 @@ export function Navbar({ onOpenContact }: NavbarProps) {
         </div>
         {navLinks.slice(1).map((link) => <a key={link.name} href={link.href} className={linkClass(activeNavName === link.name)}>{link.name}</a>)}
       </div>
-      <div className="hidden items-center md:flex"><button onClick={onOpenContact} className="group flex items-center gap-2 rounded-md border border-transparent bg-[#afe714] px-4 py-2 font-inter text-[13.5px] font-semibold text-[#293541] shadow-sm transition-all duration-200 hover:border-black/10 hover:bg-white active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-[#afe714]"><span>Start a Project</span><ArrowRight size={15} className="text-[#293541] transition-transform duration-200 group-hover:translate-x-1" /></button></div>
+      <div className="hidden items-center md:flex"><Link href="/start-a-project" className="group flex items-center gap-2 rounded-md border border-transparent bg-[#afe714] px-4 py-2 font-inter text-[13.5px] font-semibold text-[#293541] shadow-sm transition-all duration-200 hover:border-black/10 hover:bg-white active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-[#afe714]"><span>Start a Project</span><ArrowRight size={15} className="text-[#293541] transition-transform duration-200 group-hover:translate-x-1" /></Link></div>
       <div className="flex items-center md:hidden"><button onClick={() => setIsOpen(!isOpen)} className="rounded-md p-1.5 text-black hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#afe714]" aria-label="Toggle Navigation">{isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}</button></div>
     </div>
     <AnimatePresence>{isOpen && <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.25, ease: "easeInOut" }} className="absolute left-0 top-14 w-full overflow-hidden border-b border-black/[0.08] bg-white px-6 py-5 shadow-xl md:hidden"><div className="flex flex-col space-y-3">
       <a href={navLinks[0].href} onClick={() => setIsOpen(false)} className={`rounded-md px-3 py-2 font-inter text-[14.5px] font-medium ${activeNavName === "Home" ? "bg-[#afe714] font-semibold text-[#293541]" : "text-black/80 hover:bg-[#afe714]/20 hover:text-black"}`}>Home</a>
       <div className="border-y border-slate-100 py-2"><a href="/about#overview" onClick={() => setIsOpen(false)} className={`block rounded-md px-3 py-2 font-poppins text-xs font-bold uppercase tracking-wide ${isAboutActive ? "bg-[#afe714] text-[#293541]" : "text-[#293541] hover:bg-[#afe714]/20"}`}>About NEXIV</a>{aboutLinks.map((link) => <a key={link.name} href={link.href} onClick={() => setIsOpen(false)} className={`mt-1 block rounded-md px-3 py-2 font-inter text-[14px] font-medium ${pathname === "/about" && aboutSection === link.section ? "bg-[#afe714] text-[#293541]" : "text-black/80 hover:bg-[#afe714]/20 hover:text-black"}`}>{link.name}</a>)}</div>
       {navLinks.slice(1).map((link) => <a key={link.name} href={link.href} onClick={() => setIsOpen(false)} className={`rounded-md px-3 py-2 font-inter text-[14.5px] font-medium ${activeNavName === link.name ? "bg-[#afe714] font-semibold text-[#293541]" : "text-black/80 hover:bg-[#afe714]/20 hover:text-black"}`}>{link.name}</a>)}
-      <div className="pt-2"><button onClick={() => { setIsOpen(false); onOpenContact?.(); }} className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-transparent bg-[#afe714] px-5 py-2.5 font-inter text-[13.5px] font-semibold text-[#293541] shadow-sm transition-all hover:border-black/10 hover:bg-white active:scale-[0.98]"><span>Start a Project</span><ArrowRight size={15} /></button></div>
+      <div className="pt-2"><Link href="/start-a-project" onClick={() => setIsOpen(false)} className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-transparent bg-[#afe714] px-5 py-2.5 font-inter text-[13.5px] font-semibold text-[#293541] shadow-sm transition-all hover:border-black/10 hover:bg-white active:scale-[0.98]"><span>Start a Project</span><ArrowRight size={15} /></Link></div>
     </div></motion.div>}</AnimatePresence>
   </nav>;
 }

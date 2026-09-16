@@ -1,13 +1,10 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Phone, Mail, ArrowRight } from "lucide-react";
 
-interface TopBarProps {
-  onOpenContact?: () => void;
-}
-
-export function TopBar({ onOpenContact }: TopBarProps) {
+export function TopBar() {
   return (
     <div className="bg-[#293541] h-9 border-b border-white/[0.08] relative z-40">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-10 h-full flex justify-between items-center">
@@ -35,13 +32,13 @@ export function TopBar({ onOpenContact }: TopBarProps) {
         </div>
 
         {/* Contact Us button */}
-        <button
-          onClick={onOpenContact}
+        <Link
+          href="/start-a-project"
           className="font-inter font-medium text-[12px] text-white border border-white/40 px-3 py-1 rounded flex items-center gap-1.5 hover:border-white hover:bg-white/5 transition-all duration-200 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#afe714]"
         >
           <span>Contact Us</span>
           <ArrowRight size={13} className="transition-transform duration-200 hover:translate-x-0.5" />
-        </button>
+        </Link>
       </div>
     </div>
   );

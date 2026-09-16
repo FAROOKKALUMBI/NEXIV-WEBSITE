@@ -1,14 +1,11 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Mail, Phone, MessageSquare } from "lucide-react";
 
-interface CtaProps {
-  onOpenContact?: () => void;
-}
-
-export function CTA({ onOpenContact }: CtaProps) {
+export function CTA() {
   return (
     <section id="contact" className="w-full bg-[#FFFFFF] py-[80px] lg:py-[100px] px-5 sm:px-10">
       <div className="w-full max-w-[1040px] mx-auto">
@@ -44,13 +41,13 @@ export function CTA({ onOpenContact }: CtaProps) {
 
             {/* Buttons row */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 w-full sm:w-auto">
-              <button
-                onClick={onOpenContact}
+              <Link
+                href="/start-a-project"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md border border-white/30 bg-[#293541] hover:border-white/80 hover:bg-white/10 active:scale-[0.98] text-white font-inter font-medium text-[13.5px] transition-all duration-200 cursor-pointer focus-visible:ring-2 focus-visible:ring-[#afe714]"
               >
                 <MessageSquare className="w-4 h-4 text-white" />
                 <span>Start a Project</span>
-              </button>
+              </Link>
 
               <a
                 href="tel:+265884288849"
