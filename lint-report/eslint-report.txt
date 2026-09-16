@@ -58,3 +58,6 @@ File: c:\Users\Trappie21 Farook\Documents\GitHub\NEXIV WEBSITE\app\api\contact\r
   [90, 19] Strings must use singlequote. (quotes)
   [92, 34] Strings must use singlequote. (quotes)
 
+File: c:\Users\Trappie21 Farook\Documents\GitHub\NEXIV WEBSITE\app\process\page.tsx
+  [16, 126] Parsing error: Expression or comma expected. (null)
+
