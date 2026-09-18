@@ -1,4 +1,5 @@
 import { Poppins, Inter } from 'next/font/google';
+import { SiteHeader } from '@/components/layout/SiteHeader';
 import './globals.css';
 
 const poppins = Poppins({
@@ -26,7 +27,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
       <body className="font-inter bg-[#293541] text-white antialiased">
-        {children}
+        <SiteHeader />
+        <div className="pt-[92px]">{children}</div>
       </body>
     </html>
   );

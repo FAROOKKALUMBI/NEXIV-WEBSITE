@@ -67,7 +67,7 @@ export function Navbar() {
   }, [activeSection, isAboutActive, pathname]);
   const linkClass = (active: boolean) => `font-inter font-medium text-[14px] transition-colors duration-200 ${active ? "rounded-md bg-[#afe714] px-3.5 py-1.5 text-[#293541]" : "px-1 py-1 text-black hover:text-[#66727b]"}`;
 
-  return <nav className="sticky top-0 z-50 flex h-14 items-center border-b border-black/[0.06] bg-white shadow-sm">
+  return <nav className="relative flex h-14 items-center border-b border-black/[0.06] bg-white shadow-sm">
     <div className="mx-auto flex h-full w-full max-w-[1280px] items-center justify-between px-5 sm:px-10">
       <Logo variant="light" />
       <div className="hidden items-center gap-5 md:flex lg:gap-7">

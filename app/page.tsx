@@ -2,8 +2,6 @@
 
 import React from "react";
 import { useRouter } from "next/navigation";
-import { TopBar } from "@/components/layout/TopBar";
-import { Navbar } from "@/components/layout/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { StatsBar } from "@/components/sections/StatsBar";
 import { About } from "@/components/sections/About";
@@ -16,10 +14,8 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col bg-[#293541] selection:bg-[#afe714] selection:text-[#293541] overflow-x-hidden">
       {/* SECTION 1 — TOP BAR */}
-      <TopBar />
 
       {/* SECTION 2 — NAVBAR */}
-      <Navbar />
 
       {/* HERO + STATSBAR */}
       <div className="relative">

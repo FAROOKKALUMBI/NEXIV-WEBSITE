@@ -13,11 +13,13 @@ File: c:\Users\Trappie21 Farook\Documents\GitHub\NEXIV WEBSITE\tailwind.config.t
   [20, 42] Strings must use singlequote. (quotes)
   [20, 55] Strings must use singlequote. (quotes)
   [21, 17] Strings must use singlequote. (quotes)
-  [21, 38] Strings must use singlequote. (quotes)
-  [21, 51] Strings must use singlequote. (quotes)
+  [21, 26] Strings must use singlequote. (quotes)
+  [21, 47] Strings must use singlequote. (quotes)
+  [21, 60] Strings must use singlequote. (quotes)
   [22, 16] Strings must use singlequote. (quotes)
-  [22, 37] Strings must use singlequote. (quotes)
-  [22, 50] Strings must use singlequote. (quotes)
+  [22, 25] Strings must use singlequote. (quotes)
+  [22, 46] Strings must use singlequote. (quotes)
+  [22, 59] Strings must use singlequote. (quotes)
 
 File: c:\Users\Trappie21 Farook\Documents\GitHub\NEXIV WEBSITE\lib\utils.ts
   [1, 39] Strings must use singlequote. (quotes)
@@ -57,7 +59,4 @@ File: c:\Users\Trappie21 Farook\Documents\GitHub\NEXIV WEBSITE\app\api\contact\r
   [90, 5] Unexpected console statement. (no-console)
   [90, 19] Strings must use singlequote. (quotes)
   [92, 34] Strings must use singlequote. (quotes)
-
-File: c:\Users\Trappie21 Farook\Documents\GitHub\NEXIV WEBSITE\app\process\page.tsx
-  [16, 126] Parsing error: Expression or comma expected. (null)
 
