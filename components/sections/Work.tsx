@@ -48,11 +48,11 @@ export function Work() {
               transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
               className="group rounded-2xl overflow-hidden bg-[#F6F8FA] border border-black/5 flex flex-col cursor-pointer transition-transform duration-500 hover:scale-[1.03] shadow-md"
             >
-              <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
+              <div className="relative aspect-[4/3] overflow-hidden bg-slate-100 flex items-center justify-center p-3">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#293541] text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <ArrowUpRight size={16} />
