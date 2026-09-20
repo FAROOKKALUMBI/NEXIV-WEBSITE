@@ -3,9 +3,9 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import { latestWork, LatestWorkItem } from "@/data/latestWork";
+import { recentDrops, RecentDropItem } from "@/data/recentDrops";
 
-export function LatestWorkMarquee() {
+export function RecentDrops() {
   return (
     <section className="relative w-full bg-[#1e2833] py-16 sm:py-20 lg:py-24 text-white overflow-hidden border-y border-white/[0.08]">
       {/* Soft background ambient glow */}
@@ -29,7 +29,7 @@ export function LatestWorkMarquee() {
 
             {/* Lime green heading */}
             <h2 className="font-poppins font-bold text-[32px] sm:text-[40px] text-[#afe714] leading-tight tracking-tight">
-              Fresh Off The Canvas
+              Recent Drops
             </h2>
 
             {/* Brand tech tagline */}
@@ -58,13 +58,13 @@ export function LatestWorkMarquee() {
 
         <div className="animate-marquee flex gap-5 sm:gap-6 py-2">
           {/* First set of cards */}
-          {latestWork.map((item, index) => (
-            <MarqueeCard key={`track1-${index}`} item={item} />
+          {recentDrops.map((item, index) => (
+            <RecentDropCard key={`track1-${index}`} item={item} />
           ))}
 
           {/* Duplicated set of cards for seamless infinite loop */}
-          {latestWork.map((item, index) => (
-            <MarqueeCard key={`track2-${index}`} item={item} />
+          {recentDrops.map((item, index) => (
+            <RecentDropCard key={`track2-${index}`} item={item} />
           ))}
         </div>
       </div>
@@ -72,7 +72,7 @@ export function LatestWorkMarquee() {
   );
 }
 
-function MarqueeCard({ item }: { item: LatestWorkItem }) {
+function RecentDropCard({ item }: { item: RecentDropItem }) {
   return (
     <Link
       href="/work"
