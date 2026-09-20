@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Hero } from "@/components/sections/Hero";
 import { StatsBar } from "@/components/sections/StatsBar";
 import { About } from "@/components/sections/About";
+import { LatestWorkMarquee } from "@/components/sections/LatestWorkMarquee";
 import { Services } from "@/components/sections/Services";
 import { CTA } from "@/components/sections/CTA";
 import { Footer } from "@/components/layout/Footer";
@@ -30,13 +31,16 @@ export default function Home() {
       {/* SECTION 5 — ABOUT */}
       <About onLearnMore={() => router.push("/about#overview")} />
 
-      {/* SECTION 6 — SERVICES */}
+      {/* SECTION 6 — RECENT DROPS / LATEST WORK AUTO-SCROLL MARQUEE */}
+      <LatestWorkMarquee />
+
+      {/* SECTION 7 — SERVICES */}
       <Services />
 
-      {/* SECTION 7 — CTA */}
+      {/* SECTION 8 — CTA */}
       <CTA />
 
-      {/* SECTION 8 — FOOTER */}
+      {/* SECTION 9 — FOOTER */}
       <Footer />
 
     </main>
