@@ -25,6 +25,26 @@ File: c:\Users\Trappie21 Farook\Documents\GitHub\NEXIV WEBSITE\lib\utils.ts
   [1, 39] Strings must use singlequote. (quotes)
   [2, 25] Strings must use singlequote. (quotes)
 
+File: c:\Users\Trappie21 Farook\Documents\GitHub\NEXIV WEBSITE\data\recentDrops.ts
+  [21, 10] Strings must use singlequote. (quotes)
+  [22, 10] Strings must use singlequote. (quotes)
+  [23, 10] Strings must use singlequote. (quotes)
+  [26, 10] Strings must use singlequote. (quotes)
+  [27, 10] Strings must use singlequote. (quotes)
+  [28, 10] Strings must use singlequote. (quotes)
+  [31, 10] Strings must use singlequote. (quotes)
+  [32, 10] Strings must use singlequote. (quotes)
+  [33, 10] Strings must use singlequote. (quotes)
+  [36, 10] Strings must use singlequote. (quotes)
+  [37, 10] Strings must use singlequote. (quotes)
+  [38, 10] Strings must use singlequote. (quotes)
+  [41, 10] Strings must use singlequote. (quotes)
+  [42, 10] Strings must use singlequote. (quotes)
+  [43, 10] Strings must use singlequote. (quotes)
+  [46, 10] Strings must use singlequote. (quotes)
+  [47, 10] Strings must use singlequote. (quotes)
+  [48, 10] Strings must use singlequote. (quotes)
+
 File: c:\Users\Trappie21 Farook\Documents\GitHub\NEXIV WEBSITE\app\api\contact\route.ts
   [1, 30] Strings must use singlequote. (quotes)
   [2, 19] Strings must use singlequote. (quotes)
