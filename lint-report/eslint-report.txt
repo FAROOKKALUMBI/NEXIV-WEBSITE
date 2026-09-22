@@ -21,10 +21,6 @@ File: c:\Users\Trappie21 Farook\Documents\GitHub\NEXIV WEBSITE\tailwind.config.t
   [22, 46] Strings must use singlequote. (quotes)
   [22, 59] Strings must use singlequote. (quotes)
 
-File: c:\Users\Trappie21 Farook\Documents\GitHub\NEXIV WEBSITE\lib\utils.ts
-  [1, 39] Strings must use singlequote. (quotes)
-  [2, 25] Strings must use singlequote. (quotes)
-
 File: c:\Users\Trappie21 Farook\Documents\GitHub\NEXIV WEBSITE\data\recentDrops.ts
   [21, 10] Strings must use singlequote. (quotes)
   [22, 10] Strings must use singlequote. (quotes)
@@ -44,6 +40,10 @@ File: c:\Users\Trappie21 Farook\Documents\GitHub\NEXIV WEBSITE\data\recentDrops.
   [46, 10] Strings must use singlequote. (quotes)
   [47, 10] Strings must use singlequote. (quotes)
   [48, 10] Strings must use singlequote. (quotes)
+
+File: c:\Users\Trappie21 Farook\Documents\GitHub\NEXIV WEBSITE\lib\utils.ts
+  [1, 39] Strings must use singlequote. (quotes)
+  [2, 25] Strings must use singlequote. (quotes)
 
 File: c:\Users\Trappie21 Farook\Documents\GitHub\NEXIV WEBSITE\app\api\contact\route.ts
   [1, 30] Strings must use singlequote. (quotes)

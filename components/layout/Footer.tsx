@@ -189,7 +189,7 @@ export function Footer() {
 
         <div className="py-7 flex flex-col sm:flex-row items-center justify-between gap-4 font-inter text-[13px] text-white/50">
           <div>
-            &copy; 2026 Nexiv Limited. All rights reserved.
+            &copy; 2025 Nexiv Limited. All rights reserved.
           </div>
           <div className="flex items-center space-x-6 sm:space-x-8">
             <Link href="/privacy" className="hover:text-[#afe714] transition-colors font-inter">
