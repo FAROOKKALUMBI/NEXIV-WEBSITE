@@ -41,10 +41,6 @@ File: c:\Users\Trappie21 Farook\Documents\GitHub\NEXIV WEBSITE\data\recentDrops.
   [47, 10] Strings must use singlequote. (quotes)
   [48, 10] Strings must use singlequote. (quotes)
 
-File: c:\Users\Trappie21 Farook\Documents\GitHub\NEXIV WEBSITE\lib\utils.ts
-  [1, 39] Strings must use singlequote. (quotes)
-  [2, 25] Strings must use singlequote. (quotes)
-
 File: c:\Users\Trappie21 Farook\Documents\GitHub\NEXIV WEBSITE\app\api\contact\route.ts
   [1, 30] Strings must use singlequote. (quotes)
   [2, 19] Strings must use singlequote. (quotes)
@@ -79,4 +75,8 @@ File: c:\Users\Trappie21 Farook\Documents\GitHub\NEXIV WEBSITE\app\api\contact\r
   [90, 5] Unexpected console statement. (no-console)
   [90, 19] Strings must use singlequote. (quotes)
   [92, 34] Strings must use singlequote. (quotes)
+
+File: c:\Users\Trappie21 Farook\Documents\GitHub\NEXIV WEBSITE\lib\utils.ts
+  [1, 39] Strings must use singlequote. (quotes)
+  [2, 25] Strings must use singlequote. (quotes)
 
