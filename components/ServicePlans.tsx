@@ -26,9 +26,9 @@ const plans: Record<Category, Plan[]> = {
     { name: "Enterprise Pack", price: "MWK 219,000.00", features: ["20 social media designs", "Campaign key visual", "Print-ready artwork", "Priority revisions", "Source files"] },
   ],
   "UI/UX & Web Design": [
-    { name: "Starter Pack", price: "MWK 350,000.00", features: ["Up to 4 pages", "Mobile-responsive design", "Contact form"] },
-    { name: "Professional Pack", price: "MWK 650,000.00", features: ["Up to 8 pages", "Mobile-responsive design", "SEO foundations", "Content management setup"] },
-    { name: "Enterprise Pack", price: "MWK 1,200,000.00", features: ["Custom page count", "E-commerce or advanced features", "SEO foundations", "Analytics setup", "Training and support"] },
+    { name: "Starter Pack", price: "MWK 150,000.00", features: ["Up to 4 pages", "Mobile-responsive design", "Contact form"] },
+    { name: "Professional Pack", price: "MWK 250,000.00", features: ["Up to 8 pages", "Mobile-responsive design", "SEO foundations", "Content management setup"] },
+    { name: "Enterprise Pack", price: "MWK 350,000.00", features: ["Custom page count", "E-commerce or advanced features", "SEO foundations", "Analytics setup", "Training and support"] },
   ],
   "Social Media Marketing": [
     { name: "Starter Pack", price: "MWK 120,000.00", features: ["Monthly content calendar", "8 branded posts", "Monthly reporting"] },
