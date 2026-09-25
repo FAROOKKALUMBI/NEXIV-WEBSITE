@@ -7,7 +7,7 @@ import { useState } from "react";
 const categories = [
   "Company Branding",
   "Graphics Designing",
-  "Website Development",
+  "UI/UX & Web Design",
   "Social Media Marketing",
 ] as const;
 
@@ -25,7 +25,7 @@ const plans: Record<Category, Plan[]> = {
     { name: "Professional Pack", price: "MWK 149,000.00", features: ["10 social media designs", "Campaign key visual", "Four revision rounds", "Ready-to-post files"] },
     { name: "Enterprise Pack", price: "MWK 219,000.00", features: ["20 social media designs", "Campaign key visual", "Print-ready artwork", "Priority revisions", "Source files"] },
   ],
-  "Website Development": [
+  "UI/UX & Web Design": [
     { name: "Starter Pack", price: "MWK 350,000.00", features: ["Up to 4 pages", "Mobile-responsive design", "Contact form"] },
     { name: "Professional Pack", price: "MWK 650,000.00", features: ["Up to 8 pages", "Mobile-responsive design", "SEO foundations", "Content management setup"] },
     { name: "Enterprise Pack", price: "MWK 1,200,000.00", features: ["Custom page count", "E-commerce or advanced features", "SEO foundations", "Analytics setup", "Training and support"] },
@@ -40,7 +40,7 @@ const plans: Record<Category, Plan[]> = {
 const projectService: Record<Category, string> = {
   "Company Branding": "Branding",
   "Graphics Designing": "Graphic Design",
-  "Website Development": "Web Design",
+  "UI/UX & Web Design": "Web Design",
   "Social Media Marketing": "Digital Marketing",
 };
 
